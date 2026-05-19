@@ -14,10 +14,12 @@ namespace CompanySystem.DAL
         public AppDbContext(DbContextOptions options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Server=.\\SQLEXPRESS;Database=lab9;Trusted_Connection=True;TrustServerCertificate=True;";
-            optionsBuilder.UseSqlServer(connectionString);
+          if (!optionsBuilder.IsConfigured)
+             {
+               string connectionString = "Server=.\\SQLEXPRESS;Database=lab9;Trusted_Connection=True;TrustServerCertificate=True;";
+               optionsBuilder.UseSqlServer(connectionString);
+             }
         }
-
         public override int SaveChanges()
         {
             AuditLog();

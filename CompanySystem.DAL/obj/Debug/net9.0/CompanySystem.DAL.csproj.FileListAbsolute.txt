@@ -1,14 +1,15 @@
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\bin\Debug\net9.0\CompanySystem.DAL.deps.json
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\bin\Debug\net9.0\CompanySystem.DAL.runtimeconfig.json
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\bin\Debug\net9.0\CompanySystem.DAL.dll
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\bin\Debug\net9.0\CompanySystem.DAL.pdb
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\CompanySystem.DAL.csproj.AssemblyReference.cache
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\CompanySystem.DAL.GeneratedMSBuildEditorConfig.editorconfig
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\CompanySystem.DAL.AssemblyInfoInputs.cache
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\CompanySystem.DAL.AssemblyInfo.cs
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\CompanySystem.DAL.csproj.CoreCompileInputs.cache
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\CompanySystem.DAL.dll
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\refint\CompanySystem.DAL.dll
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\CompanySystem.DAL.pdb
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\CompanySystem.DAL.genruntimeconfig.cache
-D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.DAL\obj\Debug\net9.0\ref\CompanySystem.DAL.dll
+/home/sayed/CompanySystem/CompanySystem.DAL/bin/Debug/net9.0/CompanySystem.DAL.deps.json
+/home/sayed/CompanySystem/CompanySystem.DAL/bin/Debug/net9.0/CompanySystem.DAL.runtimeconfig.json
+/home/sayed/CompanySystem/CompanySystem.DAL/bin/Debug/net9.0/CompanySystem.DAL.dll
+/home/sayed/CompanySystem/CompanySystem.DAL/bin/Debug/net9.0/CompanySystem.DAL.pdb
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.csproj.AssemblyReference.cache
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.AssemblyInfoInputs.cache
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.AssemblyInfo.cs
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.csproj.CoreCompileInputs.cache
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.sourcelink.json
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.dll
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/refint/CompanySystem.DAL.dll
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.pdb
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/CompanySystem.DAL.genruntimeconfig.cache
+/home/sayed/CompanySystem/CompanySystem.DAL/obj/Debug/net9.0/ref/CompanySystem.DAL.dll

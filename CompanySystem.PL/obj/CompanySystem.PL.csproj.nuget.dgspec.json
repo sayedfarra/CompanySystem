@@ -1,39 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.PL\\CompanySystem.PL.csproj": {}
+    "/home/sayed/CompanySystem/CompanySystem.PL/CompanySystem.PL.csproj": {}
   },
   "projects": {
-    "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.BLL\\CompanySystem.BLL.csproj": {
+    "/home/sayed/CompanySystem/CompanySystem.BLL/CompanySystem.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.BLL\\CompanySystem.BLL.csproj",
+        "projectUniqueName": "/home/sayed/CompanySystem/CompanySystem.BLL/CompanySystem.BLL.csproj",
         "projectName": "CompanySystem.BLL",
-        "projectPath": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.BLL\\CompanySystem.BLL.csproj",
-        "packagesPath": "C:\\Users\\M\\.nuget\\packages\\",
-        "outputPath": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.BLL\\obj\\",
+        "projectPath": "/home/sayed/CompanySystem/CompanySystem.BLL/CompanySystem.BLL.csproj",
+        "packagesPath": "/home/sayed/.nuget/packages/",
+        "outputPath": "/home/sayed/CompanySystem/CompanySystem.BLL/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\M\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/sayed/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.DAL\\CompanySystem.DAL.csproj": {
-                "projectPath": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.DAL\\CompanySystem.DAL.csproj"
+              "/home/sayed/CompanySystem/CompanySystem.DAL/CompanySystem.DAL.csproj": {
+                "projectPath": "/home/sayed/CompanySystem/CompanySystem.DAL/CompanySystem.DAL.csproj"
               }
             }
           }
@@ -48,7 +43,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -94,32 +89,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.DAL\\CompanySystem.DAL.csproj": {
+    "/home/sayed/CompanySystem/CompanySystem.DAL/CompanySystem.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.DAL\\CompanySystem.DAL.csproj",
+        "projectUniqueName": "/home/sayed/CompanySystem/CompanySystem.DAL/CompanySystem.DAL.csproj",
         "projectName": "CompanySystem.DAL",
-        "projectPath": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.DAL\\CompanySystem.DAL.csproj",
-        "packagesPath": "C:\\Users\\M\\.nuget\\packages\\",
-        "outputPath": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.DAL\\obj\\",
+        "projectPath": "/home/sayed/CompanySystem/CompanySystem.DAL/CompanySystem.DAL.csproj",
+        "packagesPath": "/home/sayed/.nuget/packages/",
+        "outputPath": "/home/sayed/CompanySystem/CompanySystem.DAL/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\M\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/sayed/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -138,7 +128,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -181,40 +171,35 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.PL\\CompanySystem.PL.csproj": {
+    "/home/sayed/CompanySystem/CompanySystem.PL/CompanySystem.PL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.PL\\CompanySystem.PL.csproj",
+        "projectUniqueName": "/home/sayed/CompanySystem/CompanySystem.PL/CompanySystem.PL.csproj",
         "projectName": "CompanySystem.PL",
-        "projectPath": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.PL\\CompanySystem.PL.csproj",
-        "packagesPath": "C:\\Users\\M\\.nuget\\packages\\",
-        "outputPath": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.PL\\obj\\",
+        "projectPath": "/home/sayed/CompanySystem/CompanySystem.PL/CompanySystem.PL.csproj",
+        "packagesPath": "/home/sayed/.nuget/packages/",
+        "outputPath": "/home/sayed/CompanySystem/CompanySystem.PL/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\M\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/sayed/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.BLL\\CompanySystem.BLL.csproj": {
-                "projectPath": "D:\\back_end\\ASP.NET\\day 3\\lab\\lab9\\CompanySystem.BLL\\CompanySystem.BLL.csproj"
+              "/home/sayed/CompanySystem/CompanySystem.BLL/CompanySystem.BLL.csproj": {
+                "projectPath": "/home/sayed/CompanySystem/CompanySystem.BLL/CompanySystem.BLL.csproj"
               }
             }
           }
@@ -229,7 +214,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -271,7 +256,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
