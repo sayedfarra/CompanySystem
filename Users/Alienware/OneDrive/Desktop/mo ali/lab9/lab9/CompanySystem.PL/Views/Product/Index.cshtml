@@ -1,0 +1,85 @@
+@model List<ProductReadVM>
+
+<h1 class="d-flex justify-content-center text-success">
+    All Products
+</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Count</th>
+            <th scope="col">Expiry Date</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var prod in Model)
+        {
+        <tr>
+                <td>@prod.Title</td>
+                <td>@prod.Description</td>
+                <td>@prod.Price</td>
+                <td>@prod.Count</td>
+                <td>@prod.ExpiryDate.ToString("yyyy-MM-dd")</td>
+                <td>@prod.Category</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@prod.Id" class="btn btn-primary">
+                        Details
+                    </a>
+                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@prod.Id" class="btn btn-outline-secondary">
+                        Edit
+                    </a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                            data-product-id="@prod.Id"
+                            data-productName="@prod.Title">
+                        Delete
+                    </button>
+                </td>
+        </tr>           
+        }
+    </tbody>
+    <a asp-controller="Product" asp-action="Create" class="btn btn-success">Create New Product</a>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deletModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
+            </div>
+            <div class="modal-body">
+                Are You Sure Deleting <strong id="productTitle">nnnnnnn</strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="deletBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        const deleteModal = document.getElementById('deleteModal');
+        
+        deleteModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget;
+            
+            const productId = button.getAttribute('data-product-id');
+            const productName = button.getAttribute('data-productName');
+            
+            document.getElementById('productTitle').textContent = productName;
+            
+            document.getElementById('deletBtn').onclick = function() {
+                window.location.href = '/Product/Delete/' + productId;
+            };
+        });
+    </script>
+}

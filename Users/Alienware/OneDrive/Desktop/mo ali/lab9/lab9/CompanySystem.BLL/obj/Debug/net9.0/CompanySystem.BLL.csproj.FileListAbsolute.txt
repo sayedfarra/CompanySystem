@@ -1,0 +1,17 @@
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\bin\Debug\net9.0\CompanySystem.BLL.deps.json
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\bin\Debug\net9.0\CompanySystem.BLL.runtimeconfig.json
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\bin\Debug\net9.0\CompanySystem.BLL.dll
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\bin\Debug\net9.0\CompanySystem.BLL.pdb
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\bin\Debug\net9.0\CompanySystem.DAL.dll
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\bin\Debug\net9.0\CompanySystem.DAL.pdb
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanySystem.BLL.csproj.AssemblyReference.cache
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanySystem.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanySystem.BLL.AssemblyInfoInputs.cache
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanySystem.BLL.AssemblyInfo.cs
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanySystem.BLL.csproj.CoreCompileInputs.cache
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanyS.21DD2316.Up2Date
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanySystem.BLL.dll
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\refint\CompanySystem.BLL.dll
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanySystem.BLL.pdb
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\CompanySystem.BLL.genruntimeconfig.cache
+D:\back_end\ASP.NET\day 3\lab\lab9\CompanySystem.BLL\obj\Debug\net9.0\ref\CompanySystem.BLL.dll

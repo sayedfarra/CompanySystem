@@ -1,0 +1,48 @@
+@model CategoryReadVM
+
+<h1 class="d-flex justify-content-center text-success">
+    Category Details
+</h1>
+
+<ul class="list-group">
+    <li class="list-group-item"><strong>Id:</strong> @Html.DisplayFor(m => m.Id)</li>
+    <li class="list-group-item"><strong>Name:</strong> @Html.DisplayFor(m => m.Name)</li>
+</ul>
+
+<br />
+
+<h3 class="text-success">Products in this Category</h3>
+
+@if (Model.Products != null && Model.Products.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prod in Model.Products)
+            {
+                <tr>
+                    <td>@prod.Id</td>
+                    <td>@prod.Title</td>
+                    <td>@prod.Description</td>
+                    <td>@prod.Price</td>
+                    <td>@prod.Count</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="text-muted">No products in this category.</p>
+}
+
+<br />
+@Html.ActionLink("Back to Categories", "Index", "Category", null, new { @class = "btn btn-outline-secondary" })

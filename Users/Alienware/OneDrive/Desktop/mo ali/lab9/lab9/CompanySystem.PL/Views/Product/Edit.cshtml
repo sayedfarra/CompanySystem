@@ -1,0 +1,77 @@
+@model ProductEditVM
+
+<h1 class="d-flex justify-content-center text-success">
+    Edit Product
+</h1>
+
+<hr />
+<br />
+<br />
+
+<form asp-controller="Product" asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3 form-group">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" placeholder="Enter Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Description" class="form-label"></label>
+        <input asp-for="Description" class="form-control" placeholder="Enter Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" placeholder="Enter Price" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Count" class="form-label"></label>
+        <input asp-for="Count" class="form-control" placeholder="Enter Count" />
+        <span asp-validation-for="Count" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="ExpiryDate" class="form-label">Expiry Date</label>
+        <input asp-for="ExpiryDate" type="date" class="form-control" />
+        <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="CategoryId" class="form-label">Category</label>
+        <select name="CategoryId" class="form-control" id="CategoryId" required>
+            <option value="">-- Select Category --</option>
+            @if (ViewBag.Categories != null)
+            {
+                foreach (var item in ViewBag.Categories)
+                {
+                    if (Model.CategoryId == item.Id)
+                    {
+                        <option value="@item.Id" selected>@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                }
+            }
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+        <input type="submit" class="btn btn-success" value="Save Changes" />
+        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+
+</form>
+
+@section scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

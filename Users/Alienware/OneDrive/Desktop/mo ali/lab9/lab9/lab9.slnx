@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CompanySystem.BLL/CompanySystem.BLL.csproj" />
+  <Project Path="CompanySystem.DAL/CompanySystem.DAL.csproj" />
+  <Project Path="CompanySystem.PL/CompanySystem.PL.csproj" />
+</Solution>

@@ -1,0 +1,71 @@
+@model IEnumerable<CategoryReadVM>
+<h1 class="d-flex justify-content-center text-success">
+    All Categories
+</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in Model)
+        {
+            <tr>
+                <td>@cat.Id</td>
+                <td>@cat.Name</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "Category", new { id = cat.Id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Edit", "Edit", "Category", new { id = cat.Id }, new { @class = "btn btn-outline-secondary" })
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                            data-category-id="@cat.Id"
+                            data-categoryName="@cat.Name">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+    @Html.ActionLink("Create New Category", "Create", "Category", null, new { @class = "btn btn-success" })
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Category</h5>
+            </div>
+            <div class="modal-body">
+                Are You Sure Deleting <strong id="categoryTitle">nnnnnnn</strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="deletBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        const deleteModal = document.getElementById('deleteModal');
+        
+        deleteModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget;
+            
+            const categoryId = button.getAttribute('data-category-id');
+            const categoryName = button.getAttribute('data-categoryName');
+            
+            document.getElementById('categoryTitle').textContent = categoryName;
+            
+            document.getElementById('deletBtn').onclick = function() {
+                window.location.href = '/Category/Delete/' + categoryId;
+            };
+        });
+    </script>
+}

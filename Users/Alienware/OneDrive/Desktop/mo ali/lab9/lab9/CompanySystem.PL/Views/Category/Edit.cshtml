@@ -1,0 +1,30 @@
+@model CategoryEditVM
+
+<h1 class="d-flex justify-content-center text-success">
+    Edit Category
+</h1>
+
+<hr />
+<br />
+<br />
+
+@using (Html.BeginForm("Edit", "Category", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="mb-3 form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter Category Name" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+        <input type="submit" class="btn btn-success" value="Save Changes" />
+        @Html.ActionLink("Cancel", "Index", "Category", null, new { @class = "btn btn-outline-secondary" })
+    </div>
+}
+
+@section scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

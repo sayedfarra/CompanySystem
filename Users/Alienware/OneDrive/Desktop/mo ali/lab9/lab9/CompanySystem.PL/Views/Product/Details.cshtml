@@ -1,0 +1,18 @@
+@model ProductReadVM
+
+<h1 class="d-flex justify-content-center text-success">
+    Product Details
+</h1>
+
+<ul class="list-group">
+
+    <li class="list-group-item"><strong>Title:</strong> @Model.Title</li>
+    <li class="list-group-item"><strong>Description:</strong> @Model.Description</li>
+    <li class="list-group-item"><strong>Price:</strong> @Model.Price</li>
+    <li class="list-group-item"><strong>Count:</strong> @Model.Count</li>
+    <li class="list-group-item"><strong>Expiry Date:</strong> @Model.ExpiryDate.ToString("yyyy-MM-dd")</li>
+    <li class="list-group-item"><strong>Category:</strong> @Model.Category</li>
+</ul>
+
+<br />
+<a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary">Back to Products</a>
