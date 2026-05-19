@@ -1,8 +1,37 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="hero-section">
+    <h1>
+        Welcome to<br />
+        <span class="gradient-text">CompanySystem</span>
+    </h1>
+    <p>Your modern product management platform. Organize, track, and manage your products and categories with ease.</p>
+    <div class="hero-actions">
+        <a asp-controller="Product" asp-action="Index" class="btn-gradient">
+            <i class="fas fa-box"></i> Browse Products
+        </a>
+        <a asp-controller="Category" asp-action="Index" class="btn-glass">
+            <i class="fas fa-tags"></i> View Categories
+        </a>
+    </div>
+</div>
+
+<div class="feature-grid">
+    <div class="glass-card feature-card">
+        <i class="fas fa-boxes-stacked d-block"></i>
+        <h3>Product Management</h3>
+        <p>Create, edit, and organize your product catalog with rich details and images.</p>
+    </div>
+    <div class="glass-card feature-card">
+        <i class="fas fa-layer-group d-block"></i>
+        <h3>Category System</h3>
+        <p>Group products into categories for better organization and easy navigation.</p>
+    </div>
+    <div class="glass-card feature-card">
+        <i class="fas fa-shield-halved d-block"></i>
+        <h3>Role-Based Access</h3>
+        <p>Secure admin panel with role-based authorization to protect your data.</p>
+    </div>
 </div>

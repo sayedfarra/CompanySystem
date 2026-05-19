@@ -10,10 +10,12 @@ namespace CompanySystem.PL
     {
         private readonly IProductManger _productManger;
         private readonly ICategoryManger _categoryManger;
-        public ProductController(IProductManger productManger, ICategoryManger categoryManger)
+        private readonly IWebHostEnvironment _env;
+        public ProductController(IProductManger productManger, ICategoryManger categoryManger, IWebHostEnvironment env)
         {
             _productManger = productManger;
             _categoryManger = categoryManger;
+            _env = env;
         }
 
         [HttpGet]
@@ -51,7 +53,12 @@ namespace CompanySystem.PL
         {
             if (ModelState.IsValid)
             {
-                _productManger.CreateProduct(productCreateVM);
+                string? imageUrl = null;
+                if (productCreateVM.Image != null && productCreateVM.Image.Length > 0)
+                {
+                    imageUrl = SaveImage(productCreateVM.Image);
+                }
+                _productManger.CreateProduct(productCreateVM, imageUrl);
                 return RedirectToAction(nameof(Index));
             }
             ViewBag.Categories = _categoryManger.GetAllCategories();
@@ -76,7 +83,8 @@ namespace CompanySystem.PL
                 Price = product.Price,
                 Count = product.Count,
                 ExpiryDate = product.ExpiryDate,
-                CategoryId = product.CategoryId
+                CategoryId = product.CategoryId,
+                ExistingImageUrl = product.ImageUrl
             };
 
             ViewBag.Categories = _categoryManger.GetAllCategories();
@@ -95,7 +103,13 @@ namespace CompanySystem.PL
                     return RedirectToAction(nameof(Index));
                 }
 
-                _productManger.UpdateProduct(productEditVM);
+                string? imageUrl = productEditVM.ExistingImageUrl;
+                if (productEditVM.Image != null && productEditVM.Image.Length > 0)
+                {
+                    imageUrl = SaveImage(productEditVM.Image);
+                }
+
+                _productManger.UpdateProduct(productEditVM, imageUrl);
                 return RedirectToAction(nameof(Index));
             }
             ViewBag.Categories = _categoryManger.GetAllCategories();
@@ -107,6 +121,22 @@ namespace CompanySystem.PL
         {
             _productManger.DeleteProduct(id);
             return RedirectToAction(nameof(Index));
+        }
+
+        private string SaveImage(IFormFile image)
+        {
+            var uploadsFolder = Path.Combine(_env.WebRootPath, "images", "products");
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+            var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                image.CopyTo(fileStream);
+            }
+            return "/images/products/" + uniqueFileName;
         }
     }
 }

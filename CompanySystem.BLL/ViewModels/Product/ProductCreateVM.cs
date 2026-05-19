@@ -14,6 +14,7 @@ namespace CompanySystem.BLL
         public int Count { get; set; }
         public DateTime ExpiryDate { get; set; }
         public int CategoryId { get; set; }
+        public IFormFile? Image { get; set; }
 
         public List<SelectListItem>? Categorys { get; set; }
     }

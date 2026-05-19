@@ -26,7 +26,8 @@ namespace CompanySystem.BLL
                 Count= p.Count,
                 ExpiryDate= p.ExpiryDate,
                 Category= p.Category.Name,
-                CategoryId = p.CategoryId
+                CategoryId = p.CategoryId,
+                ImageUrl = p.ImageUrl
             }).ToList();
         }
 
@@ -43,10 +44,11 @@ namespace CompanySystem.BLL
                 Count= Product.Count,
                 ExpiryDate= Product.ExpiryDate,
                 Category= Product.Category.Name,
-                CategoryId = Product.CategoryId
+                CategoryId = Product.CategoryId,
+                ImageUrl = Product.ImageUrl
             };
         }
-        public void CreateProduct(ProductCreateVM product)
+        public void CreateProduct(ProductCreateVM product, string? imageUrl)
         {
             var Product = new Product
             {
@@ -55,13 +57,14 @@ namespace CompanySystem.BLL
                 Price = product.Price,
                 Count = product.Count,
                 ExpiryDate = product.ExpiryDate,
-                CategoryId = product.CategoryId
+                CategoryId = product.CategoryId,
+                ImageUrl = imageUrl
             };
             _unitOfWork.ProductRepository.Insert(Product);
             _unitOfWork.Save();
         }
 
-        public void UpdateProduct(ProductEditVM product)
+        public void UpdateProduct(ProductEditVM product, string? imageUrl)
         {
             var Product = _unitOfWork.ProductRepository.GetById(product.Id);
             if (Product == null) return;
@@ -71,6 +74,7 @@ namespace CompanySystem.BLL
             Product.Count = product.Count;
             Product.ExpiryDate = product.ExpiryDate;
             Product.CategoryId = product.CategoryId;
+            Product.ImageUrl = imageUrl ?? Product.ImageUrl;
             _unitOfWork.Save();
         }
 

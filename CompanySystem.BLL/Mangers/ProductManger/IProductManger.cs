@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +10,8 @@ namespace CompanySystem.BLL
     {
         List<ProductReadVM> GetAllProduct();
         ProductReadVM? GetProductById(int id);
-        void CreateProduct(ProductCreateVM product);
-        void UpdateProduct(ProductEditVM product);
+        void CreateProduct(ProductCreateVM product, string? imageUrl);
+        void UpdateProduct(ProductEditVM product, string? imageUrl);
         void DeleteProduct(int id);
     }
 }

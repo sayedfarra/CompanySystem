@@ -16,7 +16,7 @@ namespace CompanySystem.DAL
         {
           if (!optionsBuilder.IsConfigured)
              {
-               string connectionString = "Server=.\\SQLEXPRESS;Database=lab9;Trusted_Connection=True;TrustServerCertificate=True;";
+               string connectionString = "Server=localhost\\SQLEXPRESS;Database=lab9;Trusted_Connection=True;TrustServerCertificate=True;";
                optionsBuilder.UseSqlServer(connectionString);
              }
         }

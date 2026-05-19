@@ -1,18 +1,55 @@
 @model ProductReadVM
 
-<h1 class="d-flex justify-content-center text-success">
-    Product Details
-</h1>
+<div class="page-header">
+    <h1><i class="fas fa-box-open me-2"></i>Product Details</h1>
+</div>
 
-<ul class="list-group">
+<div class="glass-card p-4">
+    <div class="detail-hero">
+        <div>
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="@Model.Title" class="detail-hero-img" />
+            }
+            else
+            {
+                <div class="no-image" style="height:350px; border-radius:var(--radius);">
+                    <i class="fas fa-image"></i>
+                </div>
+            }
+        </div>
+        <div>
+            <h2 style="font-weight:800; margin-bottom:0.25rem;">@Model.Title</h2>
+            <span class="badge-accent mb-3 d-inline-block">@Model.Category</span>
+            <p style="color:var(--text-secondary); margin:1rem 0;">@Model.Description</p>
 
-    <li class="list-group-item"><strong>Title:</strong> @Model.Title</li>
-    <li class="list-group-item"><strong>Description:</strong> @Model.Description</li>
-    <li class="list-group-item"><strong>Price:</strong> @Model.Price</li>
-    <li class="list-group-item"><strong>Count:</strong> @Model.Count</li>
-    <li class="list-group-item"><strong>Expiry Date:</strong> @Model.ExpiryDate.ToString("yyyy-MM-dd")</li>
-    <li class="list-group-item"><strong>Category:</strong> @Model.Category</li>
-</ul>
+            <ul class="detail-info-list">
+                <li>
+                    <span class="info-label"><i class="fas fa-dollar-sign me-2"></i>Price</span>
+                    <span class="info-value text-gradient" style="font-size:1.3rem;">@Model.Price.ToString("N0") EGP</span>
+                </li>
+                <li>
+                    <span class="info-label"><i class="fas fa-cubes me-2"></i>Stock</span>
+                    <span class="info-value">@Model.Count units</span>
+                </li>
+                <li>
+                    <span class="info-label"><i class="fas fa-calendar me-2"></i>Expiry Date</span>
+                    <span class="info-value">@Model.ExpiryDate.ToString("yyyy-MM-dd")</span>
+                </li>
+                <li>
+                    <span class="info-label"><i class="fas fa-tag me-2"></i>Category</span>
+                    <span class="info-value">@Model.Category</span>
+                </li>
+            </ul>
 
-<br />
-<a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary">Back to Products</a>
+            <div class="d-flex gap-2 mt-4">
+                <a asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id" class="btn-gradient">
+                    <i class="fas fa-pen"></i> Edit
+                </a>
+                <a asp-controller="Product" asp-action="Index" class="btn-glass">
+                    <i class="fas fa-arrow-left"></i> Back to Products
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

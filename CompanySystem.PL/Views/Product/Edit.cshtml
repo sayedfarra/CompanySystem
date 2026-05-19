@@ -1,77 +1,111 @@
 @model ProductEditVM
 
-<h1 class="d-flex justify-content-center text-success">
-    Edit Product
-</h1>
+<div class="page-header">
+    <h1><i class="fas fa-edit me-2"></i>Edit Product</h1>
+    <p>Update the product information</p>
+</div>
 
-<hr />
-<br />
-<br />
+<div class="glass-card p-4 form-glass">
+    <form asp-controller="Product" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ExistingImageUrl" />
 
-<form asp-controller="Product" asp-action="Edit" method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"><i class="fas fa-heading me-1"></i> Title</label>
+            <input asp-for="Title" class="form-control" placeholder="Enter product title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
 
-    <input type="hidden" asp-for="Id" />
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"><i class="fas fa-align-left me-1"></i> Description</label>
+            <input asp-for="Description" class="form-control" placeholder="Enter product description" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3 form-group">
-        <label asp-for="Title" class="form-label"></label>
-        <input asp-for="Title" class="form-control" placeholder="Enter Title" />
-        <span asp-validation-for="Title" class="text-danger"></span>
-    </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Price" class="form-label"><i class="fas fa-dollar-sign me-1"></i> Price</label>
+                <input asp-for="Price" class="form-control" placeholder="0.00" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Count" class="form-label"><i class="fas fa-cubes me-1"></i> Count</label>
+                <input asp-for="Count" class="form-control" placeholder="0" />
+                <span asp-validation-for="Count" class="text-danger"></span>
+            </div>
+        </div>
 
-    <div class="mb-3 form-group">
-        <label asp-for="Description" class="form-label"></label>
-        <input asp-for="Description" class="form-control" placeholder="Enter Description" />
-        <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="ExpiryDate" class="form-label"><i class="fas fa-calendar me-1"></i> Expiry Date</label>
+                <input asp-for="ExpiryDate" type="date" class="form-control" />
+                <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="CategoryId" class="form-label"><i class="fas fa-tag me-1"></i> Category</label>
+                <select name="CategoryId" class="form-control form-select" id="CategoryId" required>
+                    <option value="">-- Select Category --</option>
+                    @if (ViewBag.Categories != null)
+                    {
+                        foreach (var item in ViewBag.Categories)
+                        {
+                            if (Model.CategoryId == item.Id)
+                            {
+                                <option value="@item.Id" selected>@item.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        }
+                    }
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+        </div>
 
-    <div class="mb-3 form-group">
-        <label asp-for="Price" class="form-label"></label>
-        <input asp-for="Price" class="form-control" placeholder="Enter Price" />
-        <span asp-validation-for="Price" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3 form-group">
-        <label asp-for="Count" class="form-label"></label>
-        <input asp-for="Count" class="form-control" placeholder="Enter Count" />
-        <span asp-validation-for="Count" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3 form-group">
-        <label asp-for="ExpiryDate" class="form-label">Expiry Date</label>
-        <input asp-for="ExpiryDate" type="date" class="form-control" />
-        <span asp-validation-for="ExpiryDate" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3 form-group">
-        <label asp-for="CategoryId" class="form-label">Category</label>
-        <select name="CategoryId" class="form-control" id="CategoryId" required>
-            <option value="">-- Select Category --</option>
-            @if (ViewBag.Categories != null)
+        <div class="mb-4">
+            <label class="form-label"><i class="fas fa-image me-1"></i> Product Image</label>
+            @if (!string.IsNullOrEmpty(Model.ExistingImageUrl))
             {
-                foreach (var item in ViewBag.Categories)
-                {
-                    if (Model.CategoryId == item.Id)
-                    {
-                        <option value="@item.Id" selected>@item.Name</option>
-                    }
-                    else
-                    {
-                        <option value="@item.Id">@item.Name</option>
-                    }
-                }
+                <div class="mb-2">
+                    <img src="@Model.ExistingImageUrl" class="image-preview" alt="Current image" />
+                    <small class="d-block mt-1" style="color:var(--text-muted);">Current image — upload a new one to replace</small>
+                </div>
             }
-        </select>
-        <span asp-validation-for="CategoryId" class="text-danger"></span>
-    </div>
+            <div class="image-upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt d-block"></i>
+                <p>Click or drag image here to upload</p>
+                <input type="file" name="Image" accept="image/*" id="imageInput" onchange="previewImage(this)" />
+            </div>
+            <img id="imagePreview" class="image-preview d-none" />
+        </div>
 
-    <div class="d-flex justify-content-center gap-3">
-        <input type="submit" class="btn btn-success" value="Save Changes" />
-        <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
-    </div>
-
-</form>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn-gradient">
+                <i class="fas fa-save"></i> Save Changes
+            </button>
+            <a asp-controller="Product" asp-action="Index" class="btn-glass">
+                <i class="fas fa-times"></i> Cancel
+            </a>
+        </div>
+    </form>
+</div>
 
 @section scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('imagePreview');
+                    preview.src = e.target.result;
+                    preview.classList.remove('d-none');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 }
