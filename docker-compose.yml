@@ -29,7 +29,7 @@ services:
       - "8080:8080"
     restart: on-failure
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=lab9;User Id=sa;Password=Strong@Pass123;TrustServerCertificate=True;
     depends_on:
       sqlserver:
