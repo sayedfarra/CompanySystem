@@ -7,7 +7,7 @@ namespace CompanySystem.DAL
     public class AppDbContext : IdentityDbContext<IdentityUser>
     {
         public AppDbContext() : base()
-        {
+        { 
 
         }
 
